@@ -1,3 +1,5 @@
+import '@/styles/demo/Demos.scss';
+import '@/styles/layout/layout.scss';
 import 'primeflex/primeflex.css';
 import 'primeicons/primeicons.css';
 import 'primereact/resources/primereact.css';
@@ -6,6 +8,7 @@ import 'primereact/resources/themes/lara-light-indigo/theme.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import { PrimeReactProvider } from 'primereact/api';
+import { LayoutProvider } from '@/components/layout/context/layoutcontext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -23,7 +26,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body className={inter.className}>
                 <PrimeReactProvider>
-                    <main>{children}</main>
+                    <LayoutProvider>{children}</LayoutProvider>
                 </PrimeReactProvider>
             </body>
         </html>
